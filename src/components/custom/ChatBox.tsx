@@ -2,7 +2,7 @@
 
 import { usePeerConnection } from "@/hooks/usePeer"
 import { Button } from "@/components/ui/button"
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -20,14 +20,14 @@ export function ChatBox({peerId} : {peerId : string}){
     const [message, setMessge] = useState("");
 
     //Todo : when a new message got added the user should see the most recent message, scroll to bottom
-    const messagesEndRef = useRef(null);
-    useEffect(() => {
-        // Scroll to the bottom when chatHistory changes
-        if (messagesEndRef.current) {
-            // @ts-ignore
-            messagesEndRef.current.scrollTop;
-        }
-    }, [chatHistory]);
+    // const messagesEndRef = useRef(null);
+    // useEffect(() => {
+    //     // Scroll to the bottom when chatHistory changes
+    //     if (messagesEndRef.current) {
+    //         // @ts-ignore
+    //         messagesEndRef.current.scrollTop;
+    //     }
+    // }, [chatHistory]);
 
     function handleConnect(e : React.FormEvent){
         e.preventDefault();

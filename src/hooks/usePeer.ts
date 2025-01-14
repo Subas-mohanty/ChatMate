@@ -1,11 +1,12 @@
 import { DataConnection, Peer } from "peerjs";
 import { useCallback, useEffect, useState } from "react";
 
-enum ConnectedStatus{
-    "connected", 
-    "connecting", 
-    "disconnected"
-}
+// we can use it for staus 
+// enum ConnectedStatus{
+//     "connected", 
+//     "connecting", 
+//     "disconnected"
+// }
 
 type MessageType = "string" | "file";
 
@@ -41,7 +42,7 @@ export const usePeerConnection = (peerId : string) => {
         return () =>{
             newPeer.destroy();
         }
-    }, [peerId])
+    }, [])
 
     const handleConnection = useCallback((conn : DataConnection) => {
 
