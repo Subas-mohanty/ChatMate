@@ -2,13 +2,6 @@
 import { DataConnection, Peer } from "peerjs";
 import { useCallback, useEffect, useState } from "react";
 
-// we can use it for staus 
-// enum ConnectedStatus{
-//     "connected", 
-//     "connecting", 
-//     "disconnected"
-// }
-
 type MessageType = "string" | "file";
 
 interface Message{
@@ -43,7 +36,7 @@ export const usePeerConnection = (peerId : string) => {
         return () =>{
             newPeer.destroy();
         }
-    })
+    }, [peerId])
 
     const handleConnection = useCallback((conn : DataConnection) => {
 
@@ -72,6 +65,7 @@ export const usePeerConnection = (peerId : string) => {
             setConnectedPeers((prevPeers) => prevPeers.filter((p) => p !== conn.peer));
         })
     },[])
+
     const connectToRemotePeer = useCallback((remotePeerId : string) => {
         if(peer && !connections[remotePeerId]){
             const connection = peer.connect(remotePeerId);

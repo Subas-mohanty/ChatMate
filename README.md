@@ -1,4 +1,4 @@
-## This is <ChatMate>(https://chatmate-gold.vercel.app/), a real time chat application built using <PeerJs>(https://www.npmjs.com/package/peerjs).
+## This is [ChatMate](https://chatmate-gold.vercel.app/), a real time chat application built using [PeerJs](https://www.npmjs.com/package/peerjs).
 
 ## It is using to establish a peer to peer connection between two users. The application is built using nextJS and tailwindCSS.
 
