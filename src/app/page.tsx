@@ -1,3 +1,4 @@
+"use client"
 import { ChatBox } from "@/components/custom/ChatBox";
 
 export default function Home() {
