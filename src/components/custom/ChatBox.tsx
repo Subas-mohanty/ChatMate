@@ -2,12 +2,16 @@
 
 import { usePeerConnection } from "@/hooks/usePeer"
 import { Button } from "@/components/ui/button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-export function ChatBox({peerId} : {peerId : string}){
+export function ChatBox(){
+  const [peerId, setPeerId] = useState("");
+    useEffect(() =>{
+      setPeerId(Math.random().toString(20).substring(5,15));
+    },[])
     const {
         connectedPeers,
         connectionStatus,
@@ -44,7 +48,7 @@ export function ChatBox({peerId} : {peerId : string}){
         <div className="min-h-screen bg-gray-100 p-6">
           <Card className="max-w-3xl mx-auto shadow-lg p-0">
             <CardHeader className="bg-primary text-primary-foreground">
-              <CardTitle className="text-2xl font-bold">ChatMate Your Ultimate Chatting App</CardTitle>
+              <CardTitle className="text-2xl font-bold">ChatMate, Your Ultimate Chatting App</CardTitle>
             </CardHeader>
             <CardContent className="p-4 space-y-6">
               <div className="space-y-4">
