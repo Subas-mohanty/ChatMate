@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DataConnection, Peer } from "peerjs";
 import { useCallback, useEffect, useState } from "react";
 
@@ -42,7 +43,7 @@ export const usePeerConnection = (peerId : string) => {
         return () =>{
             newPeer.destroy();
         }
-    }, [])
+    })
 
     const handleConnection = useCallback((conn : DataConnection) => {
 
