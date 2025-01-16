@@ -1,13 +1,20 @@
-name: Build or PR
+# this is the name that will be shown in the check for ex : Build on PR / Build the project (pull_request) Successful in 35s
+name: Build on PR 
+
 on:
   pull_request:
     branches:
+    # this runs in all branches, 
+    # we can specify branches here like this 
+    # - main
+    # - master
       - '*'
 jobs:
   build:
     name: Build the project
     runs-on: ubuntu-latest
 
+    # this uses thing is, actually it is getting from github, this actually means, clone the repo, setup the code and setup node js thing is, it is downloading and setting path of node js in the remote ubuntu machine that this build is running on
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
