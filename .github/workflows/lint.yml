@@ -15,10 +15,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Adjust based on your project's requirements
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install  # Or yarn install, pnpm install based on your package manager
+        run: npm install  
 
       - name: Run ESLint
         run: npm run lint 
